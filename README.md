@@ -1,6 +1,9 @@
 # Alfa Internship Mini Sprint
-
 یک مینی‌ریپو تمرینیFront-End (React):
+
+=======
+یک مینی‌ریپو تمرینیFront-End (React):
+
 - HTML/CSS ریسپانسیو (نسخه‌ی **Pure** و **Bootstrap**)
 - تمرین‌های JS و تست با **Jest**
 - ویجت‌های کوچک React (Accordion/Carousel) با CDN
@@ -24,3 +27,12 @@ npm test
 05-bug-report/
 06-test-cases/
 ```
+
+
+
+
+## What I learned
+- Responsive (Pure + Bootstrap)
+- JS fundamentals + 5 Jest tests
+- Writing Bug Reports & Test Cases
+- Using Git branches and Pull Requests
