@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>React Carousel (CDN)</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body{margin:0; font-family:sans-serif; background:#0b0f14; color:#e6e9ee; display:grid; place-items:center; min-height:100vh}
+    .wrap{width:min(760px, 92vw)}
+    .view{position:relative; overflow:hidden; border-radius:16px; border:1px solid #222b3a; height:280px}
+    .slide{position:absolute; inset:0; display:grid; place-items:center; font-size:48px; transition:opacity .5s ease; opacity:0}
+    .slide.active{opacity:1}
+    .controls{display:flex; justify-content:space-between; margin-top:8px}
+    button{background:#111827; color:#e6e9ee; border:1px solid #222b3a; border-radius:10px; padding:8px 12px; cursor:pointer}
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function Carousel({items, interval=2500}){
+      const [i, setI] = useState(0);
+      const len = items.length;
+      useEffect(() => {
+        const t = setInterval(()=> setI(prev => (prev+1)%len), interval);
+        return () => clearInterval(t);
+      }, [len, interval]);
+      const prev = () => setI((i-1+len)%len);
+      const next = () => setI((i+1)%len);
+      return (
+        <div className="wrap">
+          <div className="view">
+            {items.map((it, idx) => (
+              <div key={idx} className={`slide ${idx===i?'active':''}`} style={{background: it.bg}}>
+                {it.label}
+              </div>
+            ))}
+          </div>
+          <div className="controls">
+            <button onClick={prev}>قبلی</button>
+            <span>{i+1} / {len}</span>
+            <button onClick={next}>بعدی</button>
+          </div>
+        </div>
+      );
+    }
+
+    const items = [
+      { label: "اسلاید ۱", bg: "linear-gradient(120deg,#1d4ed8,#22d3ee)" },
+      { label: "اسلاید ۲", bg: "linear-gradient(120deg,#059669,#a7f3d0)" },
+      { label: "اسلاید ۳", bg: "linear-gradient(120deg,#9333ea,#f472b6)" },
+    ];
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Carousel items={items}/>);
+  </script>
+</body>
+</html>

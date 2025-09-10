@@ -1,0 +1,11 @@
+body{background:#0b0f14}
+.bubble{
+  width:min(380px, 70vw); aspect-ratio:1;
+  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.15), transparent 35%),
+             radial-gradient(circle at 70% 70%, rgba(255,255,255,.12), transparent 30%),
+             linear-gradient(180deg, rgba(13,110,253,.35), rgba(25,135,84,.25));
+  border-radius:50%;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35), inset 0 0 60px rgba(255,255,255,.1);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float{ 0%,100%{ transform:translateY(0)} 50%{ transform:translateY(-10px)} }

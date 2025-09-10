@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing (Bootstrap)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-dark text-light">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-opacity-10 border-bottom border-secondary">
+    <div class="container">
+      <a class="navbar-brand text-light fw-bold" href="#">برند</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-light" href="#features">مزایا</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#contact">تماس</a></li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">شروع کنید</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold">لندینگ ریسپانسیو با Bootstrap</h1>
+        <p class="text-secondary">نمونه‌ای سریع با کامپوننت‌های آماده و Utilityها.</p>
+        <a class="btn btn-primary" href="#contact">همین حالا امتحان کنید</a>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="bubble mx-auto"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="features" class="row g-3">
+      <div class="col-md-4">
+        <div class="p-3 rounded-4 border border-secondary bg-body bg-opacity-10 h-100">
+          <h3 class="h5">ریسپانسیو</h3>
+          <p class="text-secondary">Grid سیستم، breakpoints و Utility کلاس‌ها.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 rounded-4 border border-secondary bg-body bg-opacity-10 h-100">
+          <h3 class="h5">سریع</h3>
+          <p class="text-secondary">راه‌اندازی فوری با CDN و الگوهای آماده.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 rounded-4 border border-secondary bg-body bg-opacity-10 h-100">
+          <h3 class="h5">قابل سفارشی‌سازی</h3>
+          <p class="text-secondary">Override آسان با CSS سفارشی.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-4">
+      <h2 class="h4 mb-3">فرم تماس</h2>
+      <form class="row g-3" onsubmit="return validateForm(event)">
+        <div class="col-md-6">
+          <label class="form-label">نام</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">ایمیل</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="col-12">
+          <label class="form-label">پیام</label>
+          <textarea name="message" rows="4" class="form-control" required></textarea>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary">ارسال</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container py-4 text-secondary">
+    <small>© 2025 — نمونه‌ی تمرینی</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

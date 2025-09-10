@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing (Pure HTML/CSS)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="container site-header">
+    <nav class="nav">
+      <a class="brand" href="#">برند</a>
+      <ul class="menu">
+        <li><a href="#features">مزایا</a></li>
+        <li><a href="#contact">تماس</a></li>
+        <li><a href="#cta" class="btn">شروع کنید</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>لندینگ ریسپانسیو با HTML/CSS خالص</h1>
+        <p>نمونه‌ای مینیمال با Grid/Flex، تایپوگرافی ریسپانسیو، و سمانتیک تمیز.</p>
+        <a id="cta" href="#contact" class="btn btn-primary">همین حالا امتحان کنید</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="bubble"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="features" class="features">
+      <article class="card">
+        <h3>ریسپانسیو</h3>
+        <p>موبایل‌فرست، استفاده از Grid & Flex و واحدهای مدرن.</p>
+      </article>
+      <article class="card">
+        <h3>دسترس‌پذیر</h3>
+        <p>HTML سمانتیک، کنتراست و فوکوس استایل.</p>
+      </article>
+      <article class="card">
+        <h3>سریع</h3>
+        <p>Minimal CSS، تصاویر بهینه، و لایه‌بندی پایدار.</p>
+      </article>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>فرم تماس</h2>
+      <form class="form" onsubmit="return validateForm(event)">
+        <label>نام
+          <input type="text" name="name" required placeholder="نام شما">
+        </label>
+        <label>ایمیل
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+        <label>پیام
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">ارسال</button>
+      </form>
+      <p class="note">اطلاعات شما محرمانه است.</p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© 2025 — نمونه‌ی تمرینی</small>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

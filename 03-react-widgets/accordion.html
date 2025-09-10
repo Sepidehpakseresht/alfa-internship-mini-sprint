@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>React Accordion (CDN)</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body{margin:0; font-family:sans-serif; background:#0b0f14; color:#e6e9ee; display:grid; place-items:center; min-height:100vh}
+    .card{width:min(640px, 92vw); background:#111827; border:1px solid #222b3a; border-radius:16px; overflow:hidden}
+    .item{border-top:1px solid #222b3a}
+    .btn{width:100%; text-align:inherit; background:transparent; border:0; color:inherit; padding:14px 16px; display:flex; align-items:center; justify-content:space-between; cursor:pointer}
+    .content{padding:0 16px 14px; color:#a7b1c2}
+    .title{font-weight:700}
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    function Accordion({items}){
+      const [open, setOpen] = useState(null);
+      return (
+        <div className="card" role="tablist" aria-label="سوالات متداول">
+          {items.map((it, i) => (
+            <div className="item" key={i}>
+              <button className="btn" role="tab" aria-expanded={open===i} onClick={() => setOpen(open===i? null : i)}>
+                <span className="title">{it.title}</span>
+                <span>{open===i ? "–" : "+"}</span>
+              </button>
+              {open===i && <div className="content" role="region">{it.content}</div>}
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    const data = [
+      { title: "ریسپانسیو یعنی چه؟", content: "یعنی صفحه در موبایل/تبلت/دسکتاپ درست نمایش داده شود."},
+      { title: "چرا React؟", content: "کامپوننت‌محور، قابل ترکیب و رایج در صنعت."},
+      { title: "چطور تست بنویسیم؟", content: "برای توابع pure از Jest استفاده می‌کنیم."},
+    ];
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Accordion items={data}/>);
+  </script>
+</body>
+</html>
