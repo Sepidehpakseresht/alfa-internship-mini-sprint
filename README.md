@@ -1,6 +1,6 @@
 # Alfa Internship Mini Sprint
 
-یک مینی‌ریپو تمرینی برای پوشش خواسته‌های آگهی کارآموزی Front-End (React):
+یک مینی‌ریپو تمرینیFront-End (React):
 - HTML/CSS ریسپانسیو (نسخه‌ی **Pure** و **Bootstrap**)
 - تمرین‌های JS و تست با **Jest**
 - ویجت‌های کوچک React (Accordion/Carousel) با CDN
@@ -12,9 +12,6 @@
 npm install
 npm test
 ```
-
-## پیش‌نمایش
-- برای صفحات HTML (landing و ویجت‌ها)، فایل‌ها را مستقیم با مرورگر باز کنید یا روی Vercel/Netlify آپلود نمایید.
 
 ## ساختار
 ```
